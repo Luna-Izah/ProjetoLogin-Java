@@ -1,0 +1,18 @@
+package br.com.adrianob;
+
+import br.com.adrianob.controller.LoginController;
+
+/**
+ *
+ * @author drink
+ */
+public class Principal {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       new LoginController();
+    }
+    
+}
