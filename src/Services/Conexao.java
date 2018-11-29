@@ -1,5 +1,7 @@
-package br.com.adrianob.service;
+//nome do pacote
+package Services;
 
+//importações
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,17 +15,16 @@ public class Conexao {
 
     private static Conexao instance = null;
 
-
     private static Connection createConnection() {
         Properties config = new Properties();
-        config.put("user", "devel");
-        config.put("password", "developer");
+        config.put("user", "root");
+        config.put("password", "root");
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
+            
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/test",
+                    "jdbc:mysql://localhost:3306/singleton",
                     config
             );
 
@@ -44,7 +45,7 @@ public class Conexao {
         }
         return Conexao.instance;
     }
-
+    
     public Connection getConn() {
         return conn;
     }
